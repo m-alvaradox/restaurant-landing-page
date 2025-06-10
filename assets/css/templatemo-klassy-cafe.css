@@ -923,19 +923,22 @@ menu
 }
 
 .card1 {
-  background-image: url(../images/menu-item-01.jpg);
+  background-image: url(../images/platos/tonga_montubia.jpg);
 }
 .card2 {
-  background-image: url(../images/menu-item-02.jpg);
+  background-image: url(../images/platos/bolon_al_ajillo.jpg);
 }
 .card3 {
-  background-image: url(../images/menu-item-03.jpg);
+  background-image: url(../images/platos/cerro_manaba.jpg);
 }
 .card4 {
-  background-image: url(../images/menu-item-04.jpg);
+  background-image: url(../images/platos/ceviche_jipijapa.jpg);
 }
 .card5 {
-  background-image: url(../images/menu-item-05.jpg);
+  background-image: url(../images/platos/canoazo_manaba.jpg);
+}
+.card6 {
+  background-image: url(../images/platos/camaron_al_ajillo.jpg);
 }
 
 .info {
