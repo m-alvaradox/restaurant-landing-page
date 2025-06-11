@@ -219,7 +219,7 @@ header
 
 .background-header .logo,
 .background-header .main-nav .nav li a {
-  color: #1e1e1e!important;
+  color: #ffffff!important;
 }
 
 .background-header .main-nav .nav li:hover a {
@@ -310,17 +310,17 @@ header
 }
 
 .header-area .main-nav .nav li a {
-  color: #2a2a2a;
+  color: #ffffff;
 }
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #79B927!important;
+  color: #FFEB3B !important;
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: #79B927!important;
+  color: #FFEB3B!important;
   opacity: 1;
 }
 
@@ -1669,5 +1669,18 @@ responsive
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* Cambia el fondo del header a verde */
+.header-area,
+.background-header {
+  background-color: #79B927 !important;
+}
+
+/* Ajusta el fondo en responsive */
+@media (max-width: 767px) {
+  .header-area {
+    background-color: #79B927 !important;
   }
 }
