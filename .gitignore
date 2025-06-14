@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+prepos-6.config
+prepos.config
+package-lock.json
+package.json
+
+# Firebase environment variables
+.env
+.firebaserc
+firebase.json
+.firebase
+.vscode

@@ -566,7 +566,7 @@ https://templatemo.com/tm-558-klassy-cafe
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-form">
-                        <form id="contact" action="" method="post">
+                        <form id="contact" onsubmit="enviarFormulario(event)">
                           <div class="row">
                             <div class="col-lg-12">
                                 <h4>Reservas</h4>
@@ -631,7 +631,7 @@ https://templatemo.com/tm-558-klassy-cafe
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="submit" id="form-submit" class="main-button-icon">Reservar</button>
+                                <button type="submit" id="form-submit" class="main-button-icon" onclick="enviarFormulario(event)">Reservar</button>
                               </fieldset>
                             </div>
                           </div>
@@ -719,6 +719,19 @@ https://templatemo.com/tm-558-klassy-cafe
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+
+    <script type="module">
+        import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+        window.emailjs = emailjs;
+    </script>
+    <!-- Acciones Formulario-->
+
+    <script type="module">
+        import { enviarFormulario } from './assets/js/form-actions.js';
+        window.enviarFormulario = enviarFormulario;
+    </script>
+
+
     <script>
 
         $(function() {
