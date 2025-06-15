@@ -31,7 +31,5 @@ package.json
 
 # Firebase environment variables
 .env
-.firebaserc
-firebase.json
-.firebase
 .vscode
+.vercel
