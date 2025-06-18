@@ -1,15 +1,11 @@
-import emailjs from '@emailjs/browser';
+// Reemplaza por tus claves reales de EmailJS
+emailjs.init("WSD5O1j04bUHNdOTG");
 
-// form-actions.js
-export function enviarFormulario(event) {
-  event.preventDefault(); // Evita recargar la página
+window.enviarFormulario = function(event) {
+  event.preventDefault();
 
-  const user = import.meta.env.VITE_EMAILJS_USER_ID; // Reemplaza con tu User ID de EmailJS
-  const service = import.meta.env.VITE_EMAILJS_SERVICE_ID; // Reemplaza con tu Service ID de EmailJS
-  const template = import.meta.env.VITE_EMAILJS_TEMPLATE_ID; // Reemplaza con tu Template ID de EmailJS
-
-
-  emailjs.init(user); // Reemplaza con tu User ID de EmailJS
+  const service = "service_pe185vm";     // ← cambia por tu verdadero Service ID
+  const template = "template_0gfq9ou";   // ← cambia por tu Template ID
 
   const templateParams = {
     name: document.getElementById("name").value,
@@ -21,13 +17,31 @@ export function enviarFormulario(event) {
     message: document.getElementById("message").value,
   };
 
+  const submitBtn = document.getElementById("form-submit");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Enviando...";
+
   emailjs.send(service, template, templateParams)
     .then(() => {
-      alert("✅ Reserva enviada correctamente");
+        Swal.fire({
+        icon: "success",
+        title: "¡Reserva enviada!",
+        text: "Te responderemos pronto por WhatsApp o correo 😊",
+        confirmButtonText: "Aceptar"
+      });
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Reservar";
       document.getElementById("contact").reset();
     })
     .catch((error) => {
       console.error("❌ Error al enviar:", error);
-      alert("Error al enviar el formulario");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Hubo un problema al enviar tu reserva. Intenta de nuevo.",
+        confirmButtonText: "Cerrar"
+      });
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Reservar";
     });
-}
+};
