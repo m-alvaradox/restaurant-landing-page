@@ -35,3 +35,4 @@ package.json
 firebase.json
 .firebase
 .vscode
+.vercel
